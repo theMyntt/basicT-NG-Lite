@@ -1,0 +1,14 @@
+{
+  "name": "basict-ng-lite",
+  "version": "0.0.1",
+  "main": "src/app.js",
+  "author": "Gabriel Araújo Lima",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "start": "node src/app.js"
+  }
+}
