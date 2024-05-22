@@ -18,3 +18,6 @@ Aplicativo Ponto De Venda para desktop desenvolvido com ElectronJS, ExpressJS, J
 
 ### Observaçōes
 - Caso você incialize a instância do Electron, ele irá automaticamente inicializar o servidor da aplicação
+
+## Finalizações
+- Projeto original está [aqui](https://github.com/jpaveiro/BasicT-NG)
