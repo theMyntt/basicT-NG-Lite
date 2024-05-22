@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
 })
 
 // Api Routes
+
+/**
+ * @Param the function wait a request from json body type with UserModel informations
+ * @Return a message and status from the request
+ */
 app.post('/api/user/register', async (req, res) => {
   if (!req.body) return res.status(400).json({ message: 'Invalid request body' })
   if (await UserModel.findOne({ email: req.body.email })) return res.status(401).json({ message: 'User already registered' })
@@ -48,6 +53,31 @@ app.post('/api/user/register', async (req, res) => {
       message: 'Internal Server Error'
     })
   }
+})
+
+app.post('/api/user/login', async (req, res) => {
+  if (!req.body) return res.status(400).json({ message: 'Invalid request body' })
+
+  if (
+    !req.body.email ||
+    !req.body.password
+  ) return res.status(400).json({ message: 'email or password is required' })
+
+  const data = {
+    email: req.body.email,
+    password:  req.body.password
+  }
+
+  const userData = await UserModel.findOne(data)
+  if(!userData) return res.status(404).json({ message: 'This user dosent exists' })
+
+  const tokens = [
+    generateUniqueId(),
+    generateUniqueId(),
+    generateUniqueId()
+  ]
+
+  return res.status(200).json({ tokens: tokens, isAdmin: userData.isAdmin, name: userData.name })
 })
 
 app.listen(port, () => {
