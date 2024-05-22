@@ -2,7 +2,11 @@
   "name": "basict-ng-lite",
   "version": "0.0.1",
   "main": "src/app.js",
-  "author": "Gabriel Araújo Lima",
+  "authors": [
+    "Gabriel Araújo Lima <gabriel.araujo2902@outlook.com>",
+    "João Pedro Aveiro Pereira da Silva <joaopedroaveiro2016@gmail.com>",
+    "Vinicius de Jesus da Silva <viniciusjesusfilho07@gmail.com>"
+  ],
   "license": "MIT",
   "private": false,
   "dependencies": {
