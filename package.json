@@ -7,6 +7,10 @@
     "João Pedro Aveiro Pereira da Silva <joaopedroaveiro2016@gmail.com>",
     "Vinicius de Jesus da Silva <viniciusjesusfilho07@gmail.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theMyntt/basicT-NG-Lite.git"
+  },
   "license": "MIT",
   "private": false,
   "dependencies": {
