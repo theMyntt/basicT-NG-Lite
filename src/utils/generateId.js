@@ -5,3 +5,5 @@ const generateUniqueId = () => {
 
   return `${generateId()}-${generateId()}-${generateId()}`
 }
+
+module.exports = generateUniqueId
