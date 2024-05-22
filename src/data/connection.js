@@ -8,3 +8,9 @@ mongoose.connect('mongodb://localhost:27017/basict')
 .catch(() => {
   console.log('Error connecting to MongoDB')
 })
+
+module.exports = {
+  ProductModel,
+  PurchaseModel,
+  UserModel,
+}
