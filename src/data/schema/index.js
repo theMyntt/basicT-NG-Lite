@@ -1,4 +1,5 @@
-const ProductModel = require('./product')
+const { ProductModel } = require('./product')
+
 const PurchaseModel = require('./purchase')
 const UserModel = require('./user')
 
