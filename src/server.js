@@ -23,23 +23,31 @@ app.get('/', (req, res) => {
 
 // Api Routes
 app.post('/api/user/register', async (req, res) => {
-  if (!req) return res.status(400).json(null)
+  if (!req.body) return res.status(400).json({ message: 'Invalid request body' })
+  if (await UserModel.findOne({ email: req.body.email })) return res.status(401).json(null)
 
-  if (UserModel.find(req.body.email)) return res.status(401).json(null)
+  if (!req.body.cellphone) req.body.cellphone = null
 
-  const user = new UserModel({
-    _id: generateUniqueId(),
-    email: req.body.email,
-    password: req.body.password,
-    cellphone: req.body.cellphone,
-    isAdmin: req.body.isAdmin
-  });
-
-  void await user.save()
-
-  return res.status(200).json({
-    message: 'OK'
-  })
+  try {
+    const user = new UserModel({
+      _id: generateUniqueId(),
+      name: req.body.name.toUpperCase(),
+      email: req.body.email,
+      password: req.body.password,
+      cellphone: req.body.cellphone,
+      isAdmin: req.body.isAdmin
+    });
+  
+    void await user.save()
+  
+    return res.status(200).json({
+      message: 'OK'
+    })
+  } catch {
+    return res.status(500).json({
+      message: 'Internal Server Error'
+    })
+  }
 })
 
 app.listen(port, () => {
