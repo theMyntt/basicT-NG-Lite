@@ -1,13 +1,11 @@
 const mongoose = require('mongoose')
 
+const { ProductSchema } = require('./product')
+
 const PurchaseSchema = new mongoose.Schema({
   _id: {
     type: String,
     required: true,
-    unique: true,
-    dropDups: true,
-    dropDups: true,
-    index: true,
   },
   products: {
     type: [ProductSchema],
