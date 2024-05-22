@@ -4,10 +4,6 @@ const ProductSchema = new mongoose.Schema({
   _id: {
     type: String,
     required: true,
-    unique: true,
-    dropDups: true,
-    dropDups: true,
-    index: true,
   },
   productName: {
     type: String,
@@ -35,4 +31,7 @@ const ProductSchema = new mongoose.Schema({
 
 const ProductModel = mongoose.model('product', ProductSchema)
 
-module.exports = ProductModel
+module.exports = {
+  ProductModel,
+  ProductSchema,
+}

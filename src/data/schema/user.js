@@ -4,10 +4,6 @@ const UserSchema = new mongoose.Schema({
   _id: {
     type: String,
     required: true,
-    unique: true,
-    dropDups: true,
-    dropDups: true,
-    index: true,
   },
   name: {
     type: String,
@@ -44,4 +40,4 @@ const UserSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model('user', UserSchema)
 
-module.exports = UserSchema
+module.exports = UserModel
