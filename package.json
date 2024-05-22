@@ -19,7 +19,7 @@
     "nodemon": "^3.1.0"
   },
   "scripts": {
-    "start": "node src/app.js",
+    "start": "electron src/app.js",
     "start:dev": "nodemon src/app.js"
   }
 }
