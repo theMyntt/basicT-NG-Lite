@@ -22,6 +22,6 @@
   },
   "scripts": {
     "start": "electron src/app.js",
-    "start:dev": "nodemon src/app.js"
+    "start:dev": "nodemon src/server.js"
   }
 }
