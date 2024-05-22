@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 // Api Routes
 app.post('/api/user/register', async (req, res) => {
   if (!req.body) return res.status(400).json({ message: 'Invalid request body' })
-  if (await UserModel.findOne({ email: req.body.email })) return res.status(401).json(null)
+  if (await UserModel.findOne({ email: req.body.email })) return res.status(401).json({ message: 'User already registered' })
 
   if (!req.body.cellphone) req.body.cellphone = null
 
