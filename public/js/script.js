@@ -51,11 +51,7 @@ const loginRequest = async () => {
   })
 }
 
-$(document).ready(() => {
-  const title = document.title
-
-  if (title != 'basicT | Login') return
-
+const loginMethods = () => {
   $(document).on('keydown', (e) => {
     const { originalEvent } = e;
     
@@ -63,8 +59,14 @@ $(document).ready(() => {
       loginRequest()
     }
   })
-}) 
 
-loginButton.on("click", async () => {
-  loginRequest()
-})
+  loginButton.on("click", async () => {
+    loginRequest()
+  })
+}
+
+$(document).ready(() => {
+  const title = document.title
+
+  if (title == 'basicT | Login') loginMethods()
+}) 
