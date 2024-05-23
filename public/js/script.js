@@ -1,5 +1,3 @@
-const loginButton = $('#login-btn')
-
 const hashText = async (text) => {
   const msgBuffer = new TextEncoder().encode(text)
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer)
@@ -60,7 +58,7 @@ const loginMethods = () => {
     }
   })
 
-  loginButton.on("click", async () => {
+  $("#login-btn").on("click", async () => {
     loginRequest()
   })
 }
