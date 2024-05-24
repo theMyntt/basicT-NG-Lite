@@ -6,6 +6,19 @@ const hashText = async (text) => {
   return hashHex
 }
 
+const capitalize = (text) => {
+  if (!text) return null
+
+  text = text.toLowerCase()
+  text = text.split(' ')
+
+  for (let i = 0; i < text.length; i++) {
+    text[i] = text[i].charAt(0).toUpperCase() + text[i].slice(1)
+  }
+
+  return text.join(' ')
+}
+
 const getCookie = (name) => {
   var newName = name + "="
   var sizes = document.cookie.split(';')
@@ -89,6 +102,9 @@ const homeMethods = () => {
   if (!loginGuard()) {
     location.href = '/'
   }
+
+  const name = localStorage.getItem('name')
+  $('#brand-hello').text('Bem vindo, ' + capitalize(name))
 }
 
 $(document).ready(() => {
