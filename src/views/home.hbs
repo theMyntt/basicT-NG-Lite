@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/jquery.min.js"></script>
-  <script src="/js/jquery.cookie.min.js"></script>
   <script src="/js/script.js" defer></script>
-  <title>basicT | Home</title>
+  <title>basicT | Inicio</title>
 </head>
 <body>
   <div id="wrapper">
-    <div id="header">
-      <h1>basicT</h1>
-    </div>
-    <div id="content">
-      <h2>Home</h2>
-      <p>This is the home page of basicT.</p>
-    </div>
+    <header>
+      <h2>basicT</h2>
+    </header>
+    <main id="app-container">
+      <h2 id="brand-hello">Bem vindo, </h2>
+      <p>O que deseja fazer hoje?</p>
+      <br />
+      <div class="options">
+        <button>Nova venda</button>
+        <button id="exit-btn">Sair</button>
+      </div>
+    </main>
   </div>
 </body>
 </html>
