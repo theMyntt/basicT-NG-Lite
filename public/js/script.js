@@ -104,7 +104,7 @@ const homeMethods = () => {
   }
 
   const name = localStorage.getItem('name')
-  $('#brand-hello').text('Bem vindo, ' + capitalize(name))
+  $('#brand-hello').text('Bem vindo de volta, ' + capitalize(name))
 }
 
 $(document).ready(() => {
