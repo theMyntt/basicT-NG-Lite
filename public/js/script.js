@@ -13,6 +13,16 @@ const setCookie = (name, value, days) => {
   document.cookie = name + "=" + value + "" + expires + "path=/"
 }
 
+const LoginGuard = () => {
+  const hasToken = []
+
+  for (let i = 0; i < 3; i++) {
+    const cookieValue = $.cookie(`basiclite:token-${i}`)
+    if (!cookieValue) return false
+  }
+  return true
+}
+
 const loginRequest = async () => {
   const email = $('#email').val().toLowerCase()
   const password = await hashText($('#password').val()) 
@@ -47,6 +57,8 @@ const loginRequest = async () => {
     contentType: 'application/json',
     dataType: 'json'
   })
+
+  location.href = '/home'
 }
 
 const loginMethods = () => {
