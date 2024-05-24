@@ -8,6 +8,7 @@ button {
   background-color: darkslateblue;
   border: 0;
   color: white;
+  cursor: pointer;
 }
 
 #exit-btn {
