@@ -1,5 +1,5 @@
 # basicT NG Lite
-Aplicativo Ponto De Venda para desktop desenvolvido com ElectronJS, ExpressJS, JQuery e SQLite.
+Aplicativo Ponto De Venda para desktop desenvolvido com ElectronJS, ExpressJS, JQuery e MongoDB.
 
 ## Pré-requisitos
 - NodeJS 21.6.0
