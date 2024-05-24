@@ -58,6 +58,10 @@ app.post('/api/user/register', async (req, res) => {
   }
 })
 
+/**
+ * @Param waits a param with a email and password on json
+ * @Return 3 tokens, boolean for isAdmin and account name
+ */
 app.post('/api/user/login', async (req, res) => {
   if (!req.body) return res.status(400).json({ message: 'Invalid request body' })
 
