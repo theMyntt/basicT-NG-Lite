@@ -6,6 +6,18 @@ const hashText = async (text) => {
   return hashHex
 }
 
+const getCookie = (name) => {
+  var newName = name + "="
+  var sizes = document.cookie.split(';')
+  for (var i = 0; i < sizes.length; i++) {
+    var size = sizes[i].trim()
+    if (size.indexOf(newName) === 0) {
+      return size.substring(newName.length, size.length)
+    }
+  }
+  return null;
+}
+
 const setCookie = (name, value, days) => {
   var date = new Date()
   date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000))
@@ -13,13 +25,13 @@ const setCookie = (name, value, days) => {
   document.cookie = name + "=" + value + "" + expires + "path=/"
 }
 
-const LoginGuard = () => {
-  for (let i = 0; i < 3; i++) {
-    const cookieValue = $.cookie(`basiclite:token-${i}`)
+const loginGuard = () => {
+  for (let i = 1; i < 4; i++) {
+    const cookieValue = getCookie(`basiclite:token-${i}`)
     if (!cookieValue) return false
   }
   return true
-}
+};
 
 const loginRequest = async () => {
   const email = $('#email').val().toLowerCase()
@@ -73,8 +85,15 @@ const loginMethods = () => {
   })
 }
 
+const homeMethods = () => {
+  if (!loginGuard()) {
+    location.href = '/'
+  }
+}
+
 $(document).ready(() => {
   const title = document.title
 
   if (title == 'basicT | Login') loginMethods()
+  if (title == 'basicT | Inicio') homeMethods()
 }) 
