@@ -14,8 +14,6 @@ const setCookie = (name, value, days) => {
 }
 
 const LoginGuard = () => {
-  const hasToken = []
-
   for (let i = 0; i < 3; i++) {
     const cookieValue = $.cookie(`basiclite:token-${i}`)
     if (!cookieValue) return false
