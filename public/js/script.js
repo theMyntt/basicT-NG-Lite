@@ -85,6 +85,8 @@ const loginRequest = async () => {
 }
 
 const loginMethods = () => {
+  if (loginGuard()) location.href = '/home'
+  
   $(document).on('keydown', (e) => {
     const { originalEvent } = e;
     
